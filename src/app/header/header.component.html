@@ -1,0 +1,9 @@
+<div class="search">
+    <div class="quick_find">
+        <div class="ti-search"></div>
+        <div class="search-input1">
+            <input type="text" id="search-input" #search class="search-input" placeholder="search" oninput="search()">
+        </div>
+    </div>
+    <button class="search-btn" (click)="searchByName(search.value)">Tìm kiếm</button>
+</div>

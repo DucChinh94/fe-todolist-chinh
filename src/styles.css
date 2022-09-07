@@ -1,0 +1,292 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 43px;
+    background-color: #db4c3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    width: 300px;
+    height: 29px;
+    background-color: #ececec;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quick_find {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.ti-search {
+    position: absolute;
+    left: 5px;
+}
+
+.search-input1 {
+    margin: 30px;
+}
+
+.search-input {
+    height: 25px;
+    background-color: #ececec;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.quick_find:hover>.search-input1>.search-input {
+    background-color: #fff;
+}
+
+.quick_find:hover {
+    background-color: #fff;
+}
+
+.search-btn {
+    height: 29px;
+    padding: 0 2px;
+    border-radius: 5px;
+    border: hidden;
+    background-color: #fff;
+}
+
+.search-btn:hover {
+    background-color: yellow;
+}
+
+/* body */
+
+.t-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+/* slider */
+
+.slider {
+    width: 25%;
+    height: 600px;
+    background-color: #fafafa;
+    padding-top: 2%;
+}
+
+.task-menu {
+    padding-left: 35px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.task-menu li {
+    width: auto;
+    height: 34px;
+    line-height: 34px;
+    /* border-bottom: 1px solid #e8e8e8; */
+    padding: 0 1em;
+    border-radius: 5px;
+}
+
+.task-menu li:hover {
+    background: #CDE2CD;
+}
+
+.inbox {
+    display: flex;
+    flex-grow: 1;
+}
+
+.inbox-text {
+    margin-left: 7px;
+    flex-grow: 3;
+}
+
+.today {
+    display: flex;
+    flex-grow: 1;
+}
+
+.today-text {
+    margin-left: 7px;
+    flex-grow: 3;
+}
+
+.upcoming {
+    display: flex;
+    flex-grow: 1;
+}
+
+.upcoming-text {
+    margin-left: 7px;
+    flex-grow: 3;
+}
+
+.filter {
+    display: flex;
+    flex-grow: 1;
+}
+
+.filter-text {
+    margin-left: 7px;
+    flex-grow: 3;
+}
+
+.project {
+    padding-left: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.ti-angle-down {
+    padding: 0 1em;
+}
+
+.project-text {
+    flex-grow: 3;
+}
+
+.ti-plus {
+    margin-right: 10px;
+    display: none;
+}
+
+.project:hover>.ti-plus {
+    display: block;
+}
+
+/* content */
+
+.content {
+    margin: 0 10%;
+    padding-top: 2%;
+    flex-grow: 3;
+}
+
+.conten-menu {}
+
+.content-menu-header {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.simple_content {
+    flex-grow: 3;
+}
+
+.comment {
+    display: flex;
+    margin-right: 20px;
+}
+
+.ti-comment {
+    margin-right: 5px;
+}
+
+.view {
+    display: flex;
+    margin-right: 20px;
+}
+
+.ti-view-list-alt {
+    margin-right: 5px;
+}
+
+.ti-more {}
+
+.icon:hover {
+    background: #CDE2CD;
+}
+
+.content ul li {
+    display: flex;
+    flex-grow: 1;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+}
+
+.text {
+    margin-left: 10px;
+    flex-grow: 3;
+}
+
+.ti-slice {
+    display: none;
+}
+
+.content-menu ul li:hover>.ti-slice {
+    display: block;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    border: 1px solid #CDE2CD;
+    border-radius: 5px;
+}
+
+.box-holder1 {
+    display: block;
+    width: 100%;
+    padding: 1px;
+    margin-top: 8px;
+    margin-left: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    /* border: hidden; */
+}
+
+.box-holder2 {
+    display: block;
+    width: 100%;
+    padding: 1px;
+    margin-top: 8px;
+    margin-left: 5px;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+    outline: none;
+    /* border: hidden; */
+}
+
+.button {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn {
+    background-color: red;
+    width: 52px;
+    height: 30px;
+    border-radius: 5px;
+    box-sizing: content-box;
+    padding: 0 12px;
+    margin: 12px 0 12px 12px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background: coral;
+    cursor: not-allowed;
+}

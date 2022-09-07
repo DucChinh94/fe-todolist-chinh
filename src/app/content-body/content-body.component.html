@@ -1,0 +1,48 @@
+<div class="content-menu">
+    <div class="content-menu-header">
+        <div class="simple_content">
+            <h1>Inbox</h1>
+        </div>
+        <div class="icon comment">
+            <div class="ti-comment"></div>
+            <div>Comment</div>
+        </div>
+        <div class=" icon view">
+            <div class="ti-view-list-alt"></div>
+            <div>View</div>
+        </div>
+        <div class="icon ti-more"></div>
+    </div>
+    <ul id="result">
+        <li id="sua1" *ngFor="let task of tasks">
+            <div class="check-radio" (click)="deleteTodo(task.id)">
+            <!-- <div class="check-radio" (click)="onDelete(task.id)"> -->
+                <input name="gender" value="" type="radio">
+            </div>
+            <div class="text">
+                <p class="taskName">{{task.taskName}}</p>
+                <small>{{task.description}}</small>
+            </div>
+            <div class="ti-slice" (click)="editTodo(task.id)"></div>
+            <!-- <div class="ti-slice" (click)="onEdit(task)"></div> -->
+        </li>
+    </ul>
+</div>
+<div class="content-box" id="content-box">
+    <form class="addTask-form" [formGroup]="addTaskForm">
+        <div class="box">
+            <input id="phanbietsuavaxoa" type="text" style="display: none;" class="box-holder1" placeholder="Task name">
+            <input type="text" id="box-holder1" class="box-holder1" placeholder="Task name" formControlName="taskName"
+                required="required">
+            <input type="text" id="box-holder2" class="box-holder2" placeholder="Description"
+                formControlName="description">
+        </div>
+        <div class="button">
+            <button id="btn" class="btn" type="button" (click)="addOrUpdate()" [disabled]="addTaskForm.invalid">Add
+                task</button>
+                <!-- <button id="btn" class="btn" type="button" (click)="addTask()" (click)="countTask()" [disabled]="addTaskForm.invalid">Add
+                    task</button> -->
+        </div>
+    </form>
+    <!-- <pre>{{ addTaskForm.value | json }}</pre>  -->
+</div>
