@@ -18,4 +18,9 @@ export class HeaderComponent implements OnInit {
     this.todoService.searchByName(name);
   }
 
+  searchByDeleteName(name: string)
+  {
+    this.todoService.searchDeletedByName(name);
+  }
+
 }

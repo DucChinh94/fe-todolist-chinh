@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class TodoService {
 
-  public url: string = "http://localhost:9095/api/public/"
+  public url: string = "http://localhost:9096/api/public/"
   public tasks: Task[] = [];
   public taskFilter: Task[] = [];
   public task!: Task;
@@ -64,15 +64,15 @@ export class TodoService {
       return  (this.http.get(this.url + 'search', {params}) as Observable<any>);
     }
 
-  // // Search Deleted By Name
-  // searchDeletedByName(name: string) {
-  //   const params = new HttpParams().set('name', name);
-  //   (this.http.get(this.url + 'searchDeleted', { params }) as Observable<any>).subscribe((data) => {
-  //     this.taskDeletedSearch = data.item as Observable<any>;
-  //     this.searchDeleted.emit();
-  //   });
-  //   return (this.http.get(this.url + 'searchDeleted', { params }) as Observable<any>);
-  // }
+  // Search Deleted By Name
+  searchDeletedByName(name: string) {
+    const params = new HttpParams().set('name', name);
+    (this.http.get(this.url + 'searchDeleted', { params }) as Observable<any>).subscribe((data) => {
+      this.taskDeletedSearch = data.obj as Observable<any>;
+      this.searchDeleted.emit();
+    });
+    return (this.http.get(this.url + 'searchDeleted', { params }) as Observable<any>);
+  }
 
   // // Search By Name
   // searchByName(name : string){

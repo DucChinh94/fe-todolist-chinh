@@ -11,25 +11,24 @@ import { TodoService } from '../todo/todo.service';
 export class ContentBody2Component implements OnInit {
 
   public tasks: Task[] = [];
-  public subscription!: Subscription;
-  public deleteCount: number = 0;
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-    this.getDeletedTodoList(); 
+    this.getDeletedTodoList();
+
     this.todoService.searchDeleted.subscribe(()=>
     {
       this.tasks=this.todoService.taskDeletedSearch;
     })
   }
 
-  // get Deleted TodoList
-  getDeletedTodoList() {
-    this.subscription = this.todoService.getDeletedTodoList().subscribe(data => {
-      this.tasks = data.obj;
-      this.todoService.deletedCount$.next(this.tasks.length);
-    });
-  }
+ // get Deleted TodoList
+ getDeletedTodoList() {
+ this.todoService.getDeletedTodoList().subscribe(data => {
+    this.tasks = data.obj;
+    this.todoService.deletedCount$.next(this.tasks.length);
+  });
+}
 
 }

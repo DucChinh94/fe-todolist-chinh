@@ -17,19 +17,19 @@ export class ContentBodyComponent implements OnInit {
   public task!: Task;
   public subscription!: Subscription;
 
+  public count: number = 0;
+  public deleteCount: number = 0;
+
   constructor(private todoService: TodoService) { }
 
-  ngOnchanges(): void {
-    // this.addOrUpdate
-  }
-
   ngOnInit(): void {
+    this.loadData();
+
     this.addTaskForm;
-    this.todoService.search.subscribe(() =>{
+    
+    this.todoService.search.subscribe(() => {
       this.tasks = this.todoService.taskSearch;
     })
-    this.loadData();
-    // this.addOrUpdate();
   }
 
   // form group
@@ -44,8 +44,7 @@ export class ContentBodyComponent implements OnInit {
   public loadData() {
     this.subscription = this.todoService.getTodo().subscribe(data => {
       this.tasks = data.obj;
-      console.log(data.obj);
-      
+      this.todoService.todoCount$.next(this.tasks.length);
     })
   }
 
@@ -56,7 +55,7 @@ export class ContentBodyComponent implements OnInit {
       this.task.id = this.getLastId(this.tasks);
       this.task.deleteFlag = false;
       this.subscription = this.todoService.UpdateOrInsertTodo(this.task).subscribe(data => {
-       
+
         this.loadData();
       });
     } else {
@@ -84,7 +83,7 @@ export class ContentBodyComponent implements OnInit {
       // console.log(data.item.description);
       // console.log(data.item.id);
       // console.log(data.item.deleteFlag)
-      
+
     })
   }
 
@@ -112,5 +111,4 @@ export class ContentBodyComponent implements OnInit {
     })[0].id + 1 : 1;
     return lastID;
   }
-
 }
