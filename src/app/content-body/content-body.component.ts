@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TodoService } from '../todo/todo.service';
 import { Subscription } from 'rxjs';
@@ -78,12 +78,6 @@ export class ContentBodyComponent implements OnInit {
       this.addTaskForm.controls['description'].setValue(data.obj.description);
       this.addTaskForm.controls['id'].setValue(data.obj.id);
       this.addTaskForm.controls['deleteFlag'].setValue(false);
-      // console.log(data.item);
-      // console.log(data.item.taskName);
-      // console.log(data.item.description);
-      // console.log(data.item.id);
-      // console.log(data.item.deleteFlag)
-
     })
   }
 
@@ -97,6 +91,15 @@ export class ContentBodyComponent implements OnInit {
   deleteTodo(id: number) {
     if (confirm("Bạn có chắc chắn muốn xóa?") == true) {
       this.subscription = this.todoService.deleteTodo(id).subscribe(data => {
+        this.loadData();
+      })
+    }
+  }
+
+  // deleteAllTodo
+  deleteAllTodo() {
+    if (confirm("Bạn có chắc chắn muốn xóa tất cả dữ liệu?") == true) {
+      this.todoService.deleteAllTodo().subscribe(data => {
         this.loadData();
       })
     }

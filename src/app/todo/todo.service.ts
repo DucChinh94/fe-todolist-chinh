@@ -1,6 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
 import { Task } from "../Task";
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -10,13 +9,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class TodoService {
 
-  public url: string = "http://localhost:9096/api/public/"
+  public url: string = "http://localhost:9095/api/public/"
   public tasks: Task[] = [];
   public taskFilter: Task[] = [];
   public task!: Task;
 
   public search= new EventEmitter();
   public searchDeleted= new EventEmitter();
+
   public taskSearch: any;
   public taskDeletedSearch: any;
   public href : any;
@@ -43,6 +43,16 @@ export class TodoService {
   public deleteTodo(id: number): Observable<any> {
     return this.http.delete(this.url + 'delete/' + id);
   }
+
+  // DeleteAllTodo
+  public deleteAllTodo(): Observable<any> {
+    return this.http.delete(this.url + 'deleteAllTodo');
+  }
+
+  // // DeleteAllTodoTrash
+  // public deleteAllTodoTrash(): Observable<any> {
+  //   return this.http.delete(this.url + 'deleteAllTodoTrash');
+  // }
 
   // get Deleted TodoList
   getDeletedTodoList(): Observable<any> {
@@ -93,8 +103,6 @@ export class TodoService {
   //   }
     
   // }
-
-
 }
 
 

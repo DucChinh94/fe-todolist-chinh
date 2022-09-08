@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Task } from "../Task";
 import { TodoService } from '../todo/todo.service';
 
@@ -30,5 +29,14 @@ export class ContentBody2Component implements OnInit {
     this.todoService.deletedCount$.next(this.tasks.length);
   });
 }
+
+// // deleteAllTodo
+// deleteAllTodoTrash() {
+//   if (confirm("Bạn có chắc chắn muốn xóa tất cả dữ liệu?") == true) {
+//     this.todoService.deleteAllTodoTrash().subscribe(data => {
+//       this.contentComponent.loadData()
+//     })
+//   }
+// }
 
 }

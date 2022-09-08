@@ -11,7 +11,9 @@
             <div class="ti-view-list-alt"></div>
             <div>View</div>
         </div>
-        <div class="icon ti-more"></div>
+        <div class="icon" >
+            <button (click)="deleteAllTodo()">Delete</button>
+        </div>
     </div>
     <ul id="result">
         <li id="sua1" *ngFor="let task of tasks">
