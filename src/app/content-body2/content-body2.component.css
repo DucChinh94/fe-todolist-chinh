@@ -1,3 +1,24 @@
 .taskName {
     font-weight: bold;
 }
+
+.ti-more {
+    position: relative;
+}
+
+.box-hover {
+    position: absolute;
+    top: 0;
+    left: 17px;
+    display: flex;
+    flex-direction: column;
+    display:none;
+}
+
+.delete-btn {
+    margin-bottom: 5%;
+}
+
+#icona:hover > .box-hover {
+    display: block;
+}

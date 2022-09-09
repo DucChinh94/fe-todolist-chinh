@@ -18,7 +18,6 @@
     <ul id="result">
         <li id="sua1" *ngFor="let task of tasks">
             <div class="check-radio" (click)="deleteTodo(task.id)">
-            <!-- <div class="check-radio" (click)="onDelete(task.id)"> -->
                 <input name="gender" value="" type="radio">
             </div>
             <div class="text">
@@ -26,7 +25,6 @@
                 <small>{{task.description}}</small>
             </div>
             <div class="ti-slice" (click)="editTodo(task.id)"></div>
-            <!-- <div class="ti-slice" (click)="onEdit(task)"></div> -->
         </li>
     </ul>
 </div>

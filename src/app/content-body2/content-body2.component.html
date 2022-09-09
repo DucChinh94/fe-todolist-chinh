@@ -3,22 +3,29 @@
         <div class="simple_content">
             <h1>Trash</h1>
         </div>
-        <!-- <div class="icon" >
+        <div class=" icon">
+            <Button (click)="responseAllTodo()">Response</Button>
+        </div>
+        &nbsp;
+        <div class="icon" >
             <button (click)="deleteAllTodoTrash()">Delete</button>
-        </div> -->
+        </div>
     </div>
     <ul id="result">
         <li id="sua1" *ngFor="let task of tasks">
-            <div class="check-radio">
-            <!-- <div class="check-radio" (click)="onDelete(task.id)"> -->
+            <!-- <div class="check-radio">
                 <input name="gender" value="" type="radio">
-            </div>
+            </div> -->
             <div class="text">
                 <p class="taskName">{{task.taskName}}</p>
                 <small>{{task.description}}</small>
             </div>
-            <div class="ti-slice"></div>
-            <!-- <div class="ti-slice" (click)="onEdit(task)"></div> -->
+            <div class="icon ti-more" id="icona">
+                <div class="box-hover">
+                    <button class="delete-btn" (click)="deleteTodoTrash(task.id)">Delete</button>
+                    <button class="response-btn" (click)="responseTodo(task.id)">Response</button>
+                </div>
+            </div>
         </li>
     </ul>
 </div>

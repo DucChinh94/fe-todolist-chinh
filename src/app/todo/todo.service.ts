@@ -49,10 +49,25 @@ export class TodoService {
     return this.http.delete(this.url + 'deleteAllTodo');
   }
 
-  // // DeleteAllTodoTrash
-  // public deleteAllTodoTrash(): Observable<any> {
-  //   return this.http.delete(this.url + 'deleteAllTodoTrash');
-  // }
+  // DeleteAllTodoTrash
+  public deleteAllTodoTrash(): Observable<any> {
+    return this.http.delete(this.url + 'deleteAllTodoTrash');
+  }
+
+  // deleteTodoTrash
+  public deleteTodoTrash(id: number): Observable<any> {
+    return this.http.delete(this.url + 'deleteTodoTrash' + id);
+  }
+
+  // responseAllTodo
+  public responseAllTodo(): Observable<any> {
+    return this.http.get(this.url + 'responseAllTodo');
+  }
+
+  // responseTodo
+  public responseTodo(id: number): Observable<any> {
+    return this.http.get(this.url + 'responseTodo' + id);
+  }
 
   // get Deleted TodoList
   getDeletedTodoList(): Observable<any> {
