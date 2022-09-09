@@ -56,7 +56,7 @@ export class TodoService {
 
   // deleteTodoTrash
   public deleteTodoTrash(id: number): Observable<any> {
-    return this.http.delete(this.url + 'deleteTodoTrash' + id);
+    return this.http.delete(this.url + 'deleteTodoTrash/' + id);
   }
 
   // responseAllTodo
@@ -66,7 +66,7 @@ export class TodoService {
 
   // responseTodo
   public responseTodo(id: number): Observable<any> {
-    return this.http.get(this.url + 'responseTodo' + id);
+    return this.http.get(this.url + 'responseTodo/' + id);
   }
 
   // get Deleted TodoList

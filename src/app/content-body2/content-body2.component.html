@@ -4,11 +4,11 @@
             <h1>Trash</h1>
         </div>
         <div class=" icon">
-            <Button (click)="responseAllTodo()">Response</Button>
+            <Button (click)="responseAllTodo()">Restore all</Button>
         </div>
         &nbsp;
         <div class="icon" >
-            <button (click)="deleteAllTodoTrash()">Delete</button>
+            <button (click)="deleteAllTodoTrash()">Delete all</button>
         </div>
     </div>
     <ul id="result">
@@ -23,7 +23,7 @@
             <div class="icon ti-more" id="icona">
                 <div class="box-hover">
                     <button class="delete-btn" (click)="deleteTodoTrash(task.id)">Delete</button>
-                    <button class="response-btn" (click)="responseTodo(task.id)">Response</button>
+                    <button class="response-btn" (click)="responseTodo(task.id)">Restore</button>
                 </div>
             </div>
         </li>

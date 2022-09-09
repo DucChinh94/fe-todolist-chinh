@@ -12,13 +12,13 @@
             <div>View</div>
         </div>
         <div class="icon" >
-            <button (click)="deleteAllTodo()">Delete</button>
+            <button (click)="deleteAllTodo()">Delete all</button>
         </div>
     </div>
     <ul id="result">
         <li id="sua1" *ngFor="let task of tasks">
             <div class="check-radio" (click)="deleteTodo(task.id)">
-                <input name="gender" value="" type="radio">
+                <input name="gender" value="" type="checkbox">
             </div>
             <div class="text">
                 <p class="taskName">{{task.taskName}}</p>
